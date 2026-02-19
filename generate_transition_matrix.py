@@ -1,4 +1,3 @@
-import numpy as np
 from collections import Counter, defaultdict
 from itertools import product
 from scipy.sparse import coo_matrix
@@ -20,7 +19,7 @@ def generate_transition_matrix(n, k, a, b, p):
             state.extend([level] * count)
 
 
-        for choice in product(range(n), repeat=p):
+        for choice in product(range(n), repeat=p): #bottleneck, slozenost n na p
             counter = Counter(choice)
 
             new_state = state.copy()
@@ -45,7 +44,7 @@ def generate_transition_matrix(n, k, a, b, p):
                 next_index += 1
                 queue.append(new_macrostate)
 
-            transitions[indices[current_macrostate]][indices[new_macrostate]] += 1
+            transitions[indices[current_macrostate]][indices[new_macrostate]] += 1 # tranzicije povecamo za 1, pa onda ispocetka
 
     dim = len(indices)
     rows, cols, data = [], [], []
