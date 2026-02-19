@@ -2,7 +2,7 @@ from collections import Counter, defaultdict
 from math import factorial
 from scipy.sparse import coo_matrix
 
-def  distributions(p, n): 
+def  distributions(p, n): # nacini na koje mozemo da izaberemo p cvorova sa ponavljanjem od ukupno n cvorova 
     if n == 1: # kada ne ostane vise izbora, na poslednje mesto stavimo ono sta je ostalo od originalnog p i rekurzija se zavrsava
         yield (p,)
         return
@@ -48,7 +48,7 @@ def generate_transition_matrix2(n, k, a, b, p):
 
             macro = [0] * k 
             for v in new_state: 
-                macro[v] += 1 #(2,0,2,1,0,1, 1) -> (2,3,2) vracamo nazad u makrostanje
+                macro[v] += 1 #[2,0,2,1,0,1, 1] -> [2,3,2] vracamo nazad u makrostanje
                 
             new_macrostate = tuple(macro) # prebacujemo iz liste u tuple jer je hashable i jednom definisano stanje je nepromenljivo
 
