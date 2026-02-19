@@ -70,4 +70,4 @@ def generate_transition_matrix2(n, k, a, b, p):
             data.append(count / total) # delimo sa ukupnim brojem prelaza da dobijemo verovatnocu prelaza iz stanja i u stanje j 
 
     P = coo_matrix((data, (rows, cols)), shape=(dim, dim)).tocsr() # definisemo nenulte elemente u sparse matrici
-    return P, indices # vracamo matricu tranzicije zajedno sa indeksiranim stanjima
+    return P, indices # vracamo matricu tranzicije zajedno sa indeksiranim stanjima, a sustinski indeksi sa stanjima nam nisu potrebni, jedino zbog brzine izvrsavanja koda
