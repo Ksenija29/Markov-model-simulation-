@@ -1,5 +1,4 @@
 from collections import Counter, defaultdict
-from itertools import product
 from math import factorial
 from scipy.sparse import coo_matrix
 
