@@ -52,7 +52,7 @@ def generate_transition_matrix2(n, k, a, b, p):
                 
             new_macrostate = tuple(macro) # prebacujemo iz liste u tuple jer je hashable i jednom definisano stanje je nepromenljivo
 
-            if new_macrostate not in indices:  # ako se stanje jos nije pojavljivalo, onda mu dodeljujemo indeks i dodajemo ga kao sledeceg na red
+            if new_macrostate not in indices:  # ako se stanje jos nije pojavljivalo, onda mu dodeljujemo indeks i stavljamo ga poslednjeg na red
                 indices[new_macrostate] = next_index
                 next_index += 1
                 queue.append(new_macrostate)
